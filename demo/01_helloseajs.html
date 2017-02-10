@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>seajs快速入门</title>
+	<script src="../node_modules/seajs/dist/sea.js"></script>
+	<script>
+		//seajs的入口模块：使用use
+		seajs.use('./01_add', function(calc) {
+					var ta = document.getElementById('txt_a');
+					var tb = document.getElementById('txt_b');
+					var tres = document.getElementById('txt_res');
+					var btn = document.getElementById('btn');
+					var op = document.getElementById('sel_op');
+					btn.onclick = function () {
+						tres.value = calc.add(ta.value , tb.value) ;
+					}
+		})
+	</script>
+</head>
+<body>
+	 <input type="text" id="txt_a">
+	  <select id="sel_op">
+	    <option value="+">+</option>
+	  </select>
+	  <input type="text" id="txt_b">
+	  <input type="button" id="btn" value=" = ">
+	  <input type="text" id="txt_res">
+</body>
+</html>
